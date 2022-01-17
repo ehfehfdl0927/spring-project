@@ -3,13 +3,17 @@ package kimjoohe.springproject.service;
 import kimjoohe.springproject.domain.Member;
 import kimjoohe.springproject.repository.MemberRepository;
 import kimjoohe.springproject.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
         //이렇게 하면 MemberService를 선언할때 외부에서 레파지토리를 넣어줄 수 있음
